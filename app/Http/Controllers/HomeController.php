@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -11,6 +12,7 @@ class HomeController extends Controller
      *
      * @return void
      */
+    // 認証後じゃないとダメっていうやつ
     public function __construct()
     {
         $this->middleware('auth');
@@ -23,6 +25,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = Auth::user();
+        $email = $user->email;
+
+        return view('home')->with('email', $email);
     }
 }
