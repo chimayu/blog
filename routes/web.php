@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', 'HomeController@index')->name('Home.index'); //追加
+Route::get('/', 'HomeController@index')->name('Home.index'); 
 
-Route::get('hello', 'HelloController@index');
+Route::get('hello', 'HelloController@index'); //追加
+Route::get('hello/other', 'HelloController@other'); //追加
+// Route::get('hello', 'HelloController@index');
