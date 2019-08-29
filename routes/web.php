@@ -12,4 +12,4 @@
 */
 
 
-Route::get('hello', 'HelloController'); //追加
+Route::get('hello', 'HelloController@index'); //追加
